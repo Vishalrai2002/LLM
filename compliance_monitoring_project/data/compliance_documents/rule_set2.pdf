@@ -1,0 +1,191 @@
+Compliance Rule Set 2
+=====================
+
+Table of Contents
+-----------------
+1. Introduction
+2. Rule Details
+   2.1 Rule ID: 001 - Unauthorized Access Detection
+   2.2 Rule ID: 002 - Sensitive Data Modification
+   2.3 Rule ID: 003 - Elevated Privileges Granting
+   ...
+3. Examples
+   3.1 Example of Unauthorized Access Detection
+   3.2 Example of Sensitive Data Modification
+   3.3 Example of Elevated Privileges Granting
+   
+4. Guidelines and Best Practices
+5. Contact Information
+6. Appendices
+   6.1 Glossary
+   6.2 Relevant Regulations
+
+1. Introduction
+----------------
+Welcome to Compliance Rule Set 2. This document outlines the compliance rules and standards established by Compliance, ensuring the security and integrity of our systems and data.
+
+2. Rule Details
+----------------
+2.1 Rule ID: 001 - Unauthorized Access Detection
+    Description: Unauthorized access attempts must be detected and addressed promptly to prevent security breaches.
+    Pattern: Unauthorized access attempt detected from IP {IP_ADDRESS}.
+    Action: Alert the security team for immediate investigation.
+
+2.2 Rule ID: 002 - Sensitive Data Modification
+    Description: Any modification of sensitive data must be carefully monitored to maintain data integrity.
+    Pattern: User '{USER}' modified sensitive data.
+    Action: Generate a compliance report for review.
+
+2.3 Rule ID: 003 - Elevated Privileges Granting
+    Description: Granting of elevated privileges should be carefully monitored to prevent unauthorized access.
+    Pattern: Admin user '{USER}' granted elevated privileges to '{PRIVILEGE_LEVEL}'.
+    Action: Log the action and review it periodically.
+
+2.4 Rule ID: 004 - Configuration Changes Tracking
+    Description: Changes to system configurations should be tracked to ensure security and compliance.
+    Pattern: Admin user '{USER}' made configuration changes.
+    Action: Record changes for subsequent compliance review.
+
+2.5 Rule ID: 005 - Failed Login Attempts Monitoring
+    Description: Monitor failed login attempts to detect potential unauthorized access attempts.
+    Pattern: Login attempt from IP address {IP_ADDRESS} for user '{USER}' failed.
+    Action: Investigate and analyze failed login patterns.
+
+2.6 Rule ID: 006 - Critical System Error Handling
+    Description: Critical system errors should be promptly addressed to ensure system stability.
+    Pattern: Critical error: System crashed due to {ERROR_REASON}.
+    Action: Notify system administrators for immediate resolution.
+
+2.7 Rule ID: 007 - Suspicious Activity Detection
+    Description: Detect and address suspicious activities that might indicate security threats.
+    Pattern: Security alert: Suspicious activity detected from IP {IP_ADDRESS}.
+    Action: Initiate security incident investigation.
+
+2.8 Rule ID: 008 - Data Access Anomalies Detection
+    Description: Anomalies in data access patterns should be monitored to identify potential breaches.
+    Pattern: Unusual data access activity detected for user '{USER}' from IP {IP_ADDRESS}.
+    Action: Investigate and respond to unusual access patterns.
+
+2.9 Rule ID: 009 - Unauthorized File Access Monitoring
+    Description: Monitor unauthorized access to sensitive files to prevent data leaks.
+    Pattern: File '{FILE_NAME}' was accessed by user '{USER}'.
+    Action: Generate alerts for unauthorized file access and take corrective actions.
+
+2.10 Rule ID: 010 - Privilege Escalation Attempts
+    Description: Detect attempts to escalate privileges beyond authorized levels.
+    Pattern: User '{USER}' attempted privilege escalation to '{PRIVILEGE_LEVEL}'.
+    Action: Review and address privilege escalation attempts.
+
+2.11 Rule ID: 011 - Compliance Reporting
+    Description: Generate compliance reports based on specific log patterns.
+    Pattern: Generating compliance report for rule '{RULE_ID}' violations.
+    Action: Generate and distribute compliance reports regularly.
+
+2.12 Rule ID: 012 - Unusual Data Exfiltration Detection
+    Description: Detect unusual data exfiltration patterns that might indicate a security breach.
+    Pattern: Unusual data transfer activity detected from IP {IP_ADDRESS} to external location.
+    Action: Investigate and respond to data exfiltration attempts.
+
+2.13 Rule ID: 013 - Account Lockout Monitoring
+    Description: Monitor and respond to account lockout events to prevent unauthorized access.
+    Pattern: Account '{USER}' locked out due to multiple failed login attempts.
+    Action: Investigate and unlock the account as needed.
+
+2.14 Rule ID: 014 - User Behavior Anomalies
+    Description: Detect deviations from normal user behavior to prevent insider threats.
+    Pattern: Unusual behavior detected for user '{USER}' from IP {IP_ADDRESS}.
+    Action: Investigate and respond to abnormal user behavior.
+
+3. Examples
+-----------
+3.1 Example of Unauthorized Access Detection:
+    Log Entry: Unauthorized access attempt detected from IP 203.0.113.42.
+    Pattern Match: Unauthorized access attempt detected from IP {IP_ADDRESS}.
+    Action Taken: Security team alerted for investigation.
+
+3.2 Example of Sensitive Data Modification:
+    Log Entry: User 'john.doe' modified sensitive data.
+    Pattern Match: User '{USER}' modified sensitive data.
+    Action Taken: Compliance report generated for further review.
+
+3.3 Example of Elevated Privileges Granting:
+    Log Entry: Admin user 'admin_user' granted elevated privileges to 'manager'.
+    Pattern Match: Admin user '{USER}' granted elevated privileges to '{PRIVILEGE_LEVEL}'.
+    Action Taken: Logged for periodic review and access control analysis.
+
+3.4 Example of Configuration Changes Tracking:
+    Log Entry: Admin user 'sys_admin' made configuration changes.
+    Pattern Match: Admin user '{USER}' made configuration changes.
+    Action Taken: Recorded for subsequent compliance audit.
+
+3.5 Example of Failed Login Attempts Monitoring:
+    Log Entry: Failed login attempt from IP 198.51.100.10 for user 'mary.smith'.
+    Pattern Match: Login attempt from IP address {IP_ADDRESS} for user '{USER}' failed.
+    Action Taken: Investigated for potential unauthorized access.
+
+3.6 Example of Critical System Error Handling:
+    Log Entry: Critical error: System crashed due to memory overload.
+    Pattern Match: Critical error: System crashed due to {ERROR_REASON}.
+    Action Taken: System administrators notified for resolution.
+
+3.7 Example of Suspicious Activity Detection:
+    Log Entry: Security alert: Suspicious activity detected from IP 192.168.1.200.
+    Pattern Match: Security alert: Suspicious activity detected from IP {IP_ADDRESS}.
+    Action Taken: Initiated security incident investigation.
+
+3.8 Example of Data Access Anomalies Detection:
+    Log Entry: Unusual data access detected for user 'jane.roe' from IP 203.0.113.42.
+    Pattern Match: Unusual data access activity detected for user '{USER}' from IP {IP_ADDRESS}.
+    Action Taken: Investigated to determine the reason for the anomaly.
+
+3.9 Example of Unauthorized File Access Monitoring:
+    Log Entry: File 'confidential_document.pdf' was accessed by user 'bob.jones'.
+    Pattern Match: File '{FILE_NAME}' was accessed by user '{USER}'.
+    Action Taken: Generated alert for unauthorized file access.
+
+3.10 Example of Privilege Escalation Attempts:
+    Log Entry: User 'alice' attempted privilege escalation to 'administrator'.
+    Pattern Match: User '{USER}' attempted privilege escalation to '{PRIVILEGE_LEVEL}'.
+    Action Taken: Reviewed the attempt to ensure compliance.
+
+3.11 Example of Compliance Reporting:
+    Log Entry: Generating compliance report for rule '001' violations.
+    Pattern Match: Generating compliance report for rule '{RULE_ID}' violations.
+    Action Taken: Generated and distributed compliance report.
+
+3.12 Example of Unusual Data Exfiltration Detection:
+    Log Entry: Unusual data transfer activity detected from IP 192.168.1.100 to external location.
+    Pattern Match: Unusual data transfer activity detected from IP {IP_ADDRESS} to external location.
+    Action Taken: Investigated to prevent potential data breaches.
+
+3.13 Example of Account Lockout Monitoring:
+    Log Entry: Account 'user123' locked out due to multiple failed login attempts.
+    Pattern Match: Account '{USER}' locked out due to multiple failed login attempts.
+    Action Taken: Investigated and unlocked the account as necessary.
+
+3.14 Example of User Behavior Anomalies:
+    Log Entry: Unusual behavior detected for user 'janet.smith' from IP 198.51.100.10.
+    Pattern Match: Unusual behavior detected for user '{USER}' from IP {IP_ADDRESS}.
+    Action Taken: Investigated for potential insider threats.
+
+4. Guidelines and Best Practices
+------------------------------
+- Maintain accurate and detailed logs.
+- Investigate and resolve compliance alerts promptly.
+- Regularly review and update compliance rules to match evolving security needs.
+
+5. Contact Information
+-----------------------
+For any compliance-related inquiries or reporting, please contact:
+- Email: compliance@compliance.com
+- Phone: +91894567890
+
+6. Appendices
+-------------
+6.1 Glossary
+    - IP Address: A numerical label assigned to each device connected to a computer network.
+
+6.2 Relevant Regulations
+    - GDPR (General Data Protection Regulation): European Union regulation on data protection and privacy.
+
+[Additional appendices as needed.]

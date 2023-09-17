@@ -1,0 +1,6 @@
+timestamp,log_level,message
+2023-08-21 14:30:00,INFO,User login successful: user123
+2023-08-21 14:32:45,ERROR,Access denied for IP address 192.168.1.1
+2023-08-21 14:35:20,WARNING,Disk space running low: /dev/sda1
+2023-08-21 14:40:10,INFO,File uploaded: document.pdf
+2023-08-21 14:42:30,ERROR,Database connection failed

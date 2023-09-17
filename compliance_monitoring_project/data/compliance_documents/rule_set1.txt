@@ -1,0 +1,36 @@
+Rule ID: 001
+Description: Unauthorized Access Detection
+Pattern: Unauthorized access attempt detected from IP {IP_ADDRESS}.
+Action: Alert security team.
+
+Rule ID: 002
+Description: Sensitive Data Modification
+Pattern: User '{USER}' modified sensitive data.
+Action: Generate compliance report.
+
+Rule ID: 003
+Description: Elevated Privileges Granting
+Pattern: Admin user '{USER}' granted elevated privileges to '{PRIVILEGE_LEVEL}'.
+Action: Log the action for review.
+
+Rule ID: 004
+Description: Configuration Changes by Admin
+Pattern: Admin user '{USER}' made configuration changes.
+Action: Review the changes for compliance.
+
+Rule ID: 005
+Description: Failed Login Attempts
+Pattern: Login attempt from IP address {IP_ADDRESS} for user '{USER}' failed.
+Action: Investigate potential unauthorized access.
+
+Rule ID: 006
+Description: Critical System Error
+Pattern: Critical error: System crashed due to {ERROR_REASON}.
+Action: Notify system administrators for immediate resolution.
+
+Rule ID: 007
+Description: Unusual Activity Detection
+Pattern: Security alert: Suspicious activity detected from IP {IP_ADDRESS}.
+Action: Investigate the security incident.
+
+# Add more rules as needed

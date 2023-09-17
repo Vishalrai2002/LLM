@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compliance Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Style buttons */
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #2980b9;
+}
+/* Animation for the Compliance Breaches section */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.compliance-breaches {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+body {
+    background-color: #f4f4f4;
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+        #header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 0.8rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            margin-bottom: 1rem;
+        }
+        form {
+            margin-bottom: 1rem;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-upload-label {
+            background-color: #3498db;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .file-upload-label:hover {
+            background-color: #2980b9;
+        }
+        button[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .footer-content {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* New styles for the button and compliance breaches section */
+        #showBreachesButton {
+            background-color: #3498db;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        #complianceBreaches {
+            display: none;
+        }
+
+        #showBreachesButton {
+            background-color: #3498db;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        #complianceBreaches {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Compliance Monitoring</h1>
+        <h3>Flipkart Grid 5.0</h3>
+    </div>
+    <div class="container">
+        <h2>Upload Compliance Rules</h2>
+        <form id="uploadRulesForm">
+            <label for="ruleFile" class="file-upload-label">Choose Rule File</label>
+            <input type="file" id="ruleFile" name="ruleFile" accept=".txt, .pdf">
+            <button type="submit">Upload Rules</button>
+        </form>
+         
+        <h2>Upload Log Files</h2>
+        <form id="uploadLogsForm">
+            <label for="logFiles" class="file-upload-label">Choose Log Files</label>
+            <input type="file" id="logFiles" name="logFiles" multiple accept=".txt, .csv">
+            <button type="submit">Upload Logs</button>
+        </form>
+        
+        <!-- Button to show compliance breaches -->
+        <button id="showBreachesButton">Show Compliance Breaches</button>
+        
+        <!-- Compliance breaches section (initially hidden) -->
+        <div id="complianceBreaches">
+            <h2>Compliance Breaches</h2>
+            <ul id="breachesList"></ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Compliance Monitoring Project</p>
+            <p>Contact: info@compliance-monitoring.com</p>
+        </div>
+    </footer>
+   <!-- ... Existing HTML code ... -->
+
+   <script>
+    // Add your existing JavaScript code here
+    const uploadRulesForm = document.getElementById('uploadRulesForm');
+    const uploadLogsForm = document.getElementById('uploadLogsForm');
+    const breachesList = document.getElementById('breachesList');
+    
+    uploadRulesForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+    
+        // Get the selected rule file
+        const ruleFileInput = document.getElementById('ruleFile');
+        const ruleFile = ruleFileInput.files[0];
+    
+        if (ruleFile) {
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('ruleFile', ruleFile);
+    
+            // Send the form data to your backend API for processing 
+            
+            try {
+                const response = await fetch('/upload_rules_endpoint', {
+                    method: 'POST',
+                    body: formData,
+                });
+    
+                if (response.ok) {
+                    // Handle successful response
+                    console.log('Rule file uploaded successfully');
+    
+                    // TODO: Update the UI or perform other actions here
+                    // For example, display a success message to the user
+                    alert('Rule file uploaded successfully');
+                } else {
+                    // Handle error response
+                    console.error('Error uploading rule file');
+    
+                    // TODO: Display an error message to the user or take other actions
+                    // For example, show an error message in a designated HTML element
+                    const errorElement = document.getElementById('error-message');
+                    errorElement.textContent = 'An error occurred while uploading the rule file.';
+                }
+            } catch (error) {
+                // Handle fetch error
+                console.error('Error:', error);
+    
+                // TODO: Display an error message to the user or take other actions
+                // For example, show an error message in a designated HTML element
+                const errorElement = document.getElementById('error-message');
+                errorElement.textContent = 'An error occurred while uploading the rule file.';
+            }
+        } else {
+            // No rule file selected
+            console.error('No rule file selected');
+    
+            // TODO: Display a message to the user asking them to select a file
+            // For example, show a message in a designated HTML element
+            const errorElement = document.getElementById('error-message');
+            errorElement.textContent = 'Please select a rule file to upload.';
+        }
+    });
+    
+    
+    uploadLogsForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+    
+        // Get the selected log files
+        const logFilesInput = document.getElementById('logFiles');
+        const logFiles = logFilesInput.files;
+    
+        if (logFiles.length > 0) {
+            // Prepare form data
+            const formData = new FormData();
+            for (const file of logFiles) {
+                formData.append('logFiles', file);
+            }
+    
+            // Send the form data to your backend API for processing
+            try {
+                const response = await fetch('/upload_logs_endpoint', {
+                    method: 'POST',
+                    body: formData,
+                });
+    
+                if (response.ok) {
+                    // Handle successful response
+                    console.log('Log files uploaded successfully');
+    
+                    // TODO: Update the UI or perform other actions here
+                    // For example, display a success message to the user
+                    alert('Log files uploaded successfully');
+                } else {
+                    // Handle error response
+                    console.error('Error uploading log files');
+    
+                    // TODO: Display an error message to the user or take other actions
+                    // For example, show an error message in a designated HTML element
+                    const errorElement = document.getElementById('error-message');
+                    errorElement.textContent = 'An error occurred while uploading the log files.';
+                }
+            } catch (error) {
+                // Handle fetch error
+                console.error('Error:', error);
+    
+                // TODO: Display an error message to the user or take other actions
+                // For example, show an error message in a designated HTML element
+                const errorElement = document.getElementById('error-message');
+                errorElement.textContent = 'An error occurred while uploading the log files.';
+            }
+        } else {
+            // No log files selected
+            console.error('No log files selected');
+    
+            // TODO: Display a message to the user asking them to select files
+            // For example, show a message in a designated HTML element
+            const errorElement = document.getElementById('error-message');
+            errorElement.textContent = 'Please select log files to upload.';
+        }
+    });
+    
+    // Show compliance breaches when the button is clicked
+    const showBreachesButton = document.getElementById('showBreachesButton');
+    const complianceBreaches = document.getElementById('complianceBreaches');
+
+    showBreachesButton.addEventListener('click', () => {
+        complianceBreaches.style.display = 'block';
+    });
+    
+    // Sample breach data for demonstration
+    const sampleBreach = {
+        log_file: 'log_file1.txt',
+        log_entry: 'Unauthorized access detected',
+        description: 'Non-compliant activity detected',
+        recommendation: 'Take necessary action to address the breach'
+    };
+    
+    // Display sample breach in the UI (you'll replace this with dynamic data)
+    breachesList.innerHTML = `<li><strong>Log File:</strong> ${sampleBreach.log_file}<br>
+        <strong>Log Entry:</strong> ${sampleBreach.log_entry}<br>
+        <strong>Description:</strong> ${sampleBreach.description}<br>
+        <strong>Recommendation:</strong> ${sampleBreach.recommendation}</li>`;
+    </script>
+</body>
+</html>
